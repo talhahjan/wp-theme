@@ -1,0 +1,270 @@
+/*!
+Theme Name: dashti
+Theme URI: http://underscores.me/
+Author: Muhammad Khalid
+Author URI: https://github.com/talhahjan
+Description: This Theme is created using tailwindCss with the following plugins typography, form, line-climp plus tailwind-elements 
+the theme was created using tailwindCss with the following plugins typography, form, line-climp
+Version: 1.0.0
+Tested up to: 5.9
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: dashti_theme
+Tags: custom-logo, custom-menu, featured-images, threaded-comments, translation-ready dark-mode 
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+dashti is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Poppins:wght@300;400;500;600;700&&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-text-dark-base: rgb(248, 250, 252);
+    --color-text-dark-base-alt: rgb(209, 213, 219);
+    --body-bg-dark: 15, 23, 42;
+    /*
+   above variables are for dark mode only, remember dark mode is in 
+   its self a theme,
+   dark mode variables should not be over-writen by any theme
+   although these following variables can be over-written in theme ,in order to create 
+   theme define css class staring with theme- (i,e theme-aqua, theme-indigo)
+   themes are automatically will be populated in theme menu dropdown,
+   by using javascript's  querySelector
+   */
+    --color-text-base: rgb(17, 24, 39);
+    --color-text-base-alt: rgb(100, 116, 139);
+    --color-text-primary: rgb(var(--fill-primary));
+    --color-text-muted: rgb(255, 228, 230);
+    --color-text-inverted: rgb(255, 255, 255);
+    --fill-primary: 244, 67, 54;
+    --fill-primary-alt: 252, 81, 81;
+    --body-bg: 238, 238, 238;
+  }
+
+  .dark {
+    --color-text-base: var(--color-text-dark-base);
+    --color-text-base-alt: var(--color-text-dark-base-alt);
+  }
+
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select {
+    @apply block text-sm font-normal text-gray-500 w-full border border-primary rounded-md leading-4 outline-none p-2 box-border duration-300 bg-clip-padding appearance-none focus:border-primary focus:shadow-[0_0_8px_0] focus:shadow-primary  bg-white dark:bg-opacity-10
+  }
+  [type="checkbox"],
+  [type="radio"] {
+    @apply h-4 w-4 appearance-none rounded border border-black/25
+     bg-white 
+     outline-none 
+     before:pointer-events-none 
+     before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full 
+     before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent]
+      checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute 
+      checked:after:ml-[0.25rem] 
+      checked:after:-mt-px checked:after:block checked:after:h-[0.8125rem] 
+      checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-t-0 checked:after:border-l-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:bg-white focus:after:content-[''] checked:focus:border-primary checked:focus:bg-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:ml-[0.25rem] checked:focus:after:-mt-px checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-t-0 checked:focus:after:border-l-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent 
+     accent-[var(--color-text-primary)];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply p-0 m-0 box-border font-Poppins font-normal bg-body dark:bg-body-dark text-color-base;
+  }
+
+  .navbar-fixed {
+    @apply shadow-lg dark:border-b border-indigo-500/20;
+  }
+  .wrapper {
+    @apply flex flex-col justify-between h-screen max-w-5xl text-left mx-auto gap-2;
+  }
+
+  .children {
+    @apply ml-14 hidden mt-5 transition-all duration-300;
+  }
+
+  .comment-list {
+    @apply list-none;
+  }
+
+  .comment {
+    @apply grid grid-flow-row grid-rows-2;
+  }
+}
+
+.skin-fuchsia {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(250, 232, 255);
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 217, 70, 239;
+  --fill-primary-alt: 192, 38, 211;
+}
+
+.skin-cyan {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(207, 250, 254);
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 6, 182, 212;
+  --fill-primary-alt: 19, 195, 225;
+}
+
+.skin-teal {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(204, 251, 241);
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 20, 184, 166;
+  --fill-primary-alt: 33, 197, 179;
+}
+
+.skin-indigo {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(224, 231, 255);
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 99, 102, 241;
+  --fill-primary-alt: 112, 115, 254;
+}
+
+.skin-purple {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(243, 232, 255);
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 168, 85, 247;
+  --fill-primary-alt: 181 98 255;
+}
+
+.skin-violet {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(237, 233, 254);
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 139, 92, 246;
+  --fill-primary-alt: 152, 105, 255;
+}
+
+.skin-pink {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(252, 231, 243);
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 236, 72, 153;
+  --fill-primary-alt: 249, 85, 166;
+}
+
+.skin-emerald {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(209, 250, 229);
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 16, 185, 129;
+  --fill-primary-alt: 29, 198, 142;
+}
+
+.skin-red {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(254, 226, 226);
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 244, 67, 54;
+  --fill-primary-alt: 252, 81, 81;
+}
+
+.skin-orange {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(255, 237, 213);
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 249, 115, 22;
+  --fill-primary-alt: 255 128 35;
+}
+.skin-stone {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(rgb(245, 245, 244));
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 120, 113, 108;
+  --fill-primary-alt: 133, 126, 121;
+}
+
+.skin-fuchsia {
+  --color-text-primary: rgb(var(--fill-primary));
+  --color-text-muted: rgb(250, 232, 255);
+  --color-text-inverted: rgb(255, 255, 255);
+  --fill-primary: 217, 70, 239;
+  --fill-primary-alt: 230, 83, 252;
+}
+
+/*
+please don't touch the following classes unless you know what,
+you are doing ,actully these classes are used when
+admin is logged in wp-admin & theses clases are meant to 
+make space for admin-bar panel shown at top of the page 
+when you logged in as admin in your wordpress site 
+*/
+
+.admin-bar header nav {
+  @apply top-11 md:top-8;
+}
+
+.admin-bar .wrapper main {
+  @apply pt-24 md:pt-20;
+}
+
+.admin-bar .navbar-fixed {
+  @apply top-0 md:top-8;
+}
+
+.page-numbers {
+  @apply relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded  hover:text-gray-800 hover:bg-gray-200 focus:shadow-none;
+}
+span.page-numbers.dots,
+span.page-numbers.current {
+  @apply bg-transparent pointer-events-none;
+}
+span.page-numbers.current {
+  @apply relative block py-1.5 px-3 border-0 bg-primary-alt outline-none rounded text-inverted;
+}
+
+.prev a,
+.next a {
+  @apply relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300   hover:text-gray-800 hover:bg-gray-200 focus:shadow-none;
+}
+
+.post-navigation{
+  @apply bg-white dark:bg-opacity-5 rounded-lg shadow-lg my-5 px-2 py-4 border border-gray-200 border-indigo-500/20
+}
+
+.post-navigation .nav-links{
+  @apply flex justify-between items-center gap-5;
+}
+
+
+.post-navigation .screen-reader-text{
+  @apply hidden;
+}
+
+
+#related-tags a{
+  @apply  rounded-full bg-white px-4 py-2 text-xs 
+  font-medium uppercase leading-normal
+   shadow-md transition duration-150 
+   ease-in-out hover:shadow-lg 
+   dark:bg-white/20 hover:bg-primary dark:hover:bg-primary hover:text-inverted
+     
+}
