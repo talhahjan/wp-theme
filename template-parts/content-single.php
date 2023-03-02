@@ -28,8 +28,6 @@
 
 
 <div class="inline-flex items-center p-2">
-
-
 <button class="flex items-center p-2 duration-300 text-sm 
 font-normal 
 whitespace-nowrap 

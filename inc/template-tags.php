@@ -33,8 +33,6 @@ if ( ! function_exists( 'dashti_theme_the_post_navigation' ) ) :
 		<h2 class="text-lg font-bold font-Courgette">Previous</h2>
 		<span class="text-sm hidden md:block">%title</span>
 		</div>
-
-
 		</div>
 		'),	
 
