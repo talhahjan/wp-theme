@@ -71,7 +71,9 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   [multiple],
   textarea,
   select {
-    @apply block text-sm font-normal text-gray-500 w-full border border-primary rounded-md leading-4 outline-none p-2 box-border duration-300 bg-clip-padding appearance-none focus:border-primary focus:shadow-[0_0_8px_0] focus:shadow-primary  bg-white dark:bg-opacity-10
+    @apply block 
+    text-sm font-normal text-gray-500 w-full 
+    border border-primary rounded-md leading-4 outline-none p-2 box-border duration-300 bg-clip-padding appearance-none focus:border-primary focus:shadow-[0_0_8px_0] focus:shadow-primary bg-white dark:bg-opacity-10
   }
   [type="checkbox"],
   [type="radio"] {
@@ -231,12 +233,13 @@ when you logged in as admin in your wordpress site
 }
 
 .page-numbers {
-  @apply relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded  hover:text-gray-800 hover:bg-gray-200 focus:shadow-none;
+  @apply relative hidden md:block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded  hover:text-gray-800 hover:bg-gray-200 focus:shadow-none;
 }
 span.page-numbers.dots,
 span.page-numbers.current {
   @apply bg-transparent pointer-events-none;
 }
+
 span.page-numbers.current {
   @apply relative block py-1.5 px-3 border-0 bg-primary-alt outline-none rounded text-inverted;
 }

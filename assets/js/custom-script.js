@@ -35,6 +35,19 @@ navLinks.forEach((link) => {
   });
 });
 
+
+
+
+const search=document.getElementById('search');
+
+search.addEventListener('click', (e)=>{
+if(!e.target.closest('svg')) return ;
+const searchBar=document.querySelector('.search-bar');
+searchBar.classList.toggle('z-100');
+searchBar.classList.toggle('scale-100');
+})
+
+
 const toggleNavbar = () => {
   navMenu.classList.toggle("-left-full");
   navMenu.classList.toggle("left-0");
@@ -116,6 +129,7 @@ if(res.status==200)
 
   
 }
+
 
 
 window.onload = (e) => {

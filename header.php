@@ -175,6 +175,29 @@
  <div class="grid grid-flow-col gap-x-5 items-center">
 
 
+
+
+
+
+<div class="relative" role="button" id="search">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+<path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
+</svg>
+<form method="get" action="<?php home_url('/')?>" class="absolute top-10 z-0 right-0 scale-0 origin-center duration-300 min-w-[250px] inline-flex search-bar">
+<input type="text" name="s" placeholder="search blog .." class="block w-full rounded-r-none peer bg-white darK:bg-opacity-100">
+<button class="bg-primary text-inverted p-2 rounded-r-md shadow-md peer-focus:shadow-primary">
+<svg xmlns="http://www.w3.org/2000/svg" 
+width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+<path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
+</svg>
+</button>
+
+
+
+</form>
+</div>
+
+
               <div class="relative w-5 h-full dropdown">
                 <button
                   class="dropdown-toggle dark:text-color-base-dark-alt hover:text-color-base-alt dark:hover:text-color-base-dark duration-300 link"

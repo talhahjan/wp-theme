@@ -61,8 +61,9 @@ get_header();
 
 the_tag_list(array(
   'before'=>'
+  <h3 class="font-semibold whitespace-nowrap block pt-2">Related Topic: </h3>
   <div class="flex flex-wrap gap-2 my-4 rounded px-2 py-1" id="related-tags">
-  <h3 class="font-semibold whitespace-nowrap">Related Topic: </h3>
+  
   ',
   'sep'=>'',
   'after'=>'</div>',
