@@ -20,7 +20,6 @@ if ( ! function_exists( 'dashti_theme_the_post_navigation' ) ) :
 		
 		return the_post_navigation(array(
 		'prev_text'=>_('
-
 		<div class="flex items-center">
 
 	<div>
@@ -30,7 +29,7 @@ if ( ! function_exists( 'dashti_theme_the_post_navigation' ) ) :
     </div>
 
 		<div class="flex flex-col gap-x-2">
-		<h2 class="text-lg font-bold font-Courgette">Previous</h2>
+		<h2 class="text-lg font-bold font-Courgette">'.__('Previous', 'dahsti').'</h2>
 		<span class="text-sm hidden md:block">%title</span>
 		</div>
 		</div>
@@ -42,7 +41,7 @@ if ( ! function_exists( 'dashti_theme_the_post_navigation' ) ) :
 		<div class="flex items-center">
 
 		<div class="flex flex-col text-right gap-x-2">
-		<h2 class="text-lg font-bold font-Courgette">Next</h2>
+		<h2 class="text-lg font-bold font-Courgette">'.__('Next', 'dahsti').'</h2>
 		<span class="text-sm hidden md:block">%title</span>
 		</div>
 
@@ -56,17 +55,37 @@ if ( ! function_exists( 'dashti_theme_the_post_navigation' ) ) :
 		</div>'),	
 		'in_same_term'=>true,
 		'taxonomy'=>'category',
-		'screen_reader_text'=>__('continue reading ..'),
+		'screen_reader_text'=>__('continue reading ..','dashti'),
 		'class'=>'post-navigation',
 		));
 	}
 endif;
 
 
+if ( ! function_exists( 'dashti_theme_the_categories' ) ) :
+
+function dashti_theme_the_categories(){
+	if(is_category()):
+		return null;
+	endif;
+	$categories = get_the_category();
+  
+  if ( ! empty( $categories ) ) {
+	  $output = '<ul class="inline-flex space-x-2 items-center">';
+	  foreach ( $categories as $category ) {
+		  $output .= '<li class="text-primary font-bold"><a href="' . esc_url( get_category_link( $category->term_id ) ) . '" rel="category">' . esc_html( $category->name ) . '</a></li> ';
+	  }
+  
+	  $output .='</ul>'; 
+  
+	  echo trim( $output, ', ' );
+  }
+   }
 
 
 
 
+endif;
 
 
 
@@ -95,25 +114,65 @@ if ( ! function_exists( 'dashti_theme_post_thumbnail' ) ) :
 endif;
 
 
-if(!function_exists('dashti_theme_the_excerpt')):
-/**
- * Filter the "read more" excerpt string link to the post.
- *
- * @param string $more "Read more" excerpt string.
- * @return string (Maybe) modified "read more" excerpt string.
- */
-function dashti_theme_the_excerpt($max_words=120) {
-	$excerpt = get_the_excerpt(); 
 
-	if ( ! is_single() ) {
-		$excerpt = substr( $excerpt, 0, $max_words ); // Only display first 260 characters of excerpt
-		$result = substr( $excerpt, 0, strrpos( $excerpt, ' ' ) );
-	echo  $result;
-	}
-else{
-	echo $excerpt;}
-}
-endif;
+
+
+
+	if(!function_exists('dashti_theme_the_excerpt')):
+		/**
+		 * Filter the "read more" excerpt string link to the post.
+		 *
+		 * @param string $more "Read more" excerpt string.
+		 * @return string (Maybe) modified "read more" excerpt string.
+		 */
+		
+		
+		
+		
+		function dashti_theme_the_excerpt($max_words=100) {
+			$excerpt = get_the_excerpt(); 
+		
+		
+		if(is_single()){
+		echo $eccerpt;
+		}
+		else{
+			$data = str_replace( '<p>', '', $excerpt );
+			$data = str_replace( '</p>', '', $excerpt );
+				
+			if(strlen($data)<=$max_words){
+				echo $data;
+				}
+				else{
+				echo substr($data,0, $max_words).' ...';		
+				}	
+		
+	
+		
+		
+		}
+		
+		
+		
+		
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		endif;
+		
+		
+
+
+
 
 
 

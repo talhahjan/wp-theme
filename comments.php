@@ -31,13 +31,13 @@ if ( post_password_required() ) {
 				if ( '0' === $dashti_theme_comment_count ) {
 					printf(
 						/* translators: 1: title. */
-						esc_html__( 'be First to comment On &ldquo;%1$s&rdquo;', 'dtech' ),
+						esc_html__( 'be First to comment On &ldquo;%1$s&rdquo;', 'dashti' ),
 						 wp_kses_post( get_the_title() ) 
 					);
 				} elseif('1'===$dashti_theme_comment_count) {
 					printf( 
 						/* translators: 1: comment count number, 2: title. */
-						esc_html( _nx( 'There are currently only 1 comments On  &ldquo;%2$s&rdquo;', 'There are (%1$s) comments  On &ldquo;%2$s&rdquo;', $dashti_theme_comment_count, 'comments title', 'dtech' ) ),
+						esc_html( _nx( 'There are currently only 1 comments On  &ldquo;%2$s&rdquo;', 'There are (%1$s) comments  On &ldquo;%2$s&rdquo;', $dashti_theme_comment_count, 'comments title', 'dashti' ) ),
 						number_format_i18n( $dashti_theme_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						 wp_kses_post( get_the_title() ) 
 					);
@@ -45,7 +45,7 @@ if ( post_password_required() ) {
 				else{
 					printf( 
 						/* translators: 1: comment count number, 2: title. */
-						esc_html( _nx( 'There are (%1$s) comments On  &ldquo;%2$s&rdquo;', 'There are (%1$s) comments  On &ldquo;%2$s&rdquo;', $dashti_theme_comment_count, 'comments title', 'dtech' ) ),
+						esc_html( _nx( 'There are (%1$s) comments On  &ldquo;%2$s&rdquo;', 'There are (%1$s) comments  On &ldquo;%2$s&rdquo;', $dashti_theme_comment_count, 'comments title', 'dashti' ) ),
 						number_format_i18n( $dashti_theme_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						 wp_kses_post( get_the_title() ) 
 					);
@@ -77,7 +77,7 @@ if ( post_password_required() ) {
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() ) :
 		?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'dashti_theme' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'dashti' ); ?></p>
 		<?php
 	endif;
 endif;//check have comments
@@ -125,7 +125,7 @@ $required_text      = ' ' . wp_required_field_message();
 	  '<div class="col-span-full">%s%s</div>',
 	  sprintf(
 		/* translators: 1: User name, 2: Edit user link, 3: Logout URL. */
-		__( 'Logged in as %1$s. <a href="%2$s">Edit your profile</a>. <a href="%3$s">Log out?</a>' ),
+		__( 'Logged in as %1$s. <a href="%2$s">Edit your profile</a>. <a href="%3$s">Log out?</a>','dashti' ),
 		$user_identity,
 		get_edit_user_link(),
 		/** This filter is documented in wp-includes/link-template.php */
@@ -137,7 +137,7 @@ $required_text      = ' ' . wp_required_field_message();
 	  '<div class="col-span-full">%s%s</div>',
 	  sprintf(
 		'<div id="col-span-full">%s</div>',
-		__( 'Your email address will not be published.' )
+		__( 'Your email address will not be published.','dashti' )
 	  ),
 	  $required_text
 	),
@@ -153,17 +153,17 @@ $required_text      = ' ' . wp_required_field_message();
   	'class_form'           => 'w-full',
 	'class_submit'         => 'submit',
 	'name_submit'          => 'submit',
-	'title_reply'          => __( 'Leave a Reply' ),
+	'title_reply'          => __( 'Leave a Reply', 'dashti' ),
 	/* translators: %s: Author of the comment being replied to. */
-	'title_reply_to'       => __( 'Leave a Reply to %s' ),
+	'title_reply_to'       => __( 'Leave a Reply to %s','dashti' ),
   	'title_reply_before'   => '<div
   	class="self-start w-full border-b border-gray-200 border-indigo-500/20 px-4 py-1"><h2 class="text-base font-extrabold leading-loose">',
   	'title_reply_after'    => '</h2></div>',
 	'cancel_reply_before'  => ' <small>',
 	'cancel_reply_after'   => '</small>',
-	'cancel_reply_link'    => __( 'Cancel reply' ),
-	'label_submit'         => __( 'Post Comment' ),
-    'submit_button'        => '<input name="%1$s" type="submit" class="bg-primary text-muted hover:shadow-primary/50 shadow-md focus:outline-none block cursor-pointer font-medium rounded-md text-sm px-6 py-1 mr-2" />',
+	'cancel_reply_link'    => __( 'Cancel reply', 'dashti'),
+	'label_submit'         => __( 'Post Comment', 'dashti' ),
+    'submit_button'        => '<input name="%1$s" type="submit" class="bg-primary text-inverted hover:shadow-primary/50 shadow-md focus:outline-none block cursor-pointer font-medium rounded-md text-sm px-6 py-1 mr-2" />',
     'submit_field'         => '</div><div
 	class="self-end w-full border-t border-gray-200 border-indigo-500/20 py-2 flex justify-end items-center mt-2"
   >

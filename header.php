@@ -71,114 +71,29 @@
             >
               Code360
             </div>
-            <ul
-              class="absolute -left-full top-14 bg-gray-900/90 md:bg-inherit duration-300 md:transition-none h-screen w-[70vw] md:h-full md:w-auto md:static flex flex-col md:flex-row items-start md:justify-center md:items-center gap-2 z-100 capitalize pt-5 md:pt-0"
-              id="nav-menu"
-            >
-              <li class="w-full px-5 md:px-0 md:w-auto">
-                <a
-                  href="<?php site_url()?>"
-                  class="flex md:text-color-base md:dark:text-color-base-dark-alt md:hover:text-color-base-alt dark:md:hover:text-color-base-dark p-2 items-center gap-4 w-full text-inverted hover:text-inverted hover:bg-gradient-to-l from-primary to-primary-alt md:hover:bg-none rounded-md relative md:after:absolute md:after:left-2/5 md:after:right-2/4 md:after:bottom-1 md:after:h-0.5 md:after:w-0 md:after:hover:w-2/4 md:after:focus:w-2/4 md:after:duration-500 md:after:translate-x-2/4 md:after:translate-y-2/4 md:after:bg-primary md:shadow-none duration-300"
-                >
-                  <span class="md:hidden inline-block">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-house"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"
-                      />
-                    </svg>
-                  </span>
-                  <span>Home</span>
-                </a>
-              </li>
 
-              <li class="w-full px-5 md:px-0 md:w-auto">
-                <a
-                  href="<?php echo get_site_url()?>/portpolio"
-                  class="flex md:text-color-base md:dark:text-color-base-dark-alt md:hover:text-color-base-alt dark:md:hover:text-color-base-dark p-2 items-center gap-4 w-full text-inverted hover:text-inverted hover:bg-gradient-to-l from-primary to-primary-alt md:hover:bg-none rounded-md relative md:after:absolute md:after:left-2/5 md:after:right-2/4 md:after:bottom-1 md:after:h-0.5 md:after:w-0 md:after:hover:w-2/4 md:after:focus:w-2/4 md:after:duration-500 md:after:translate-x-2/4 md:after:translate-y-2/4 md:after:bg-primary md:shadow-none duration-300"
-                >
-                  <span class="md:hidden inline-block">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-images"
-                      viewBox="0 0 16 16"
-                    >
-                      <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-                      <path
-                        d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"
-                      />
-                    </svg>
-                  </span>
-                  <span>Fortpolio</span>
-                </a>
-              </li>
-
-              <li class="w-full px-5 md:px-0 md:w-auto">
-                <a
-                  href="<?php echo get_site_url()?>/about-us"
-                  class="flex md:text-color-base md:dark:text-color-base-dark-alt md:hover:text-color-base-alt dark:md:hover:text-color-base-dark p-2 items-center gap-4 w-full text-inverted hover:text-inverted hover:bg-gradient-to-l from-primary to-primary-alt md:hover:bg-none rounded-md relative md:after:absolute md:after:left-2/5 md:after:right-2/4 md:after:bottom-1 md:after:h-0.5 md:after:w-0 md:after:hover:w-2/4 md:after:focus:w-2/4 md:after:duration-500 md:after:translate-x-2/4 md:after:translate-y-2/4 md:after:bg-primary md:shadow-none duration-300"
-                >
-                  <span class="md:hidden inline-block">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-file-earmark-text"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"
-                      />
-                      <path
-                        d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"
-                      />
-                    </svg>
-                  </span>
-                  <span>About Us</span>
-                </a>
-              </li>
-
-              <li class="w-full px-5 md:px-0 md:w-auto">
-                <a
-                  href="<?php echo get_site_url()?>/contact-us"
-                  class="flex md:text-color-base md:dark:text-color-base-dark-alt md:hover:text-color-base-alt dark:md:hover:text-color-base-dark p-2 items-center gap-4 w-full text-inverted hover:text-inverted hover:bg-gradient-to-l from-primary to-primary-alt md:hover:bg-none rounded-md relative md:after:absolute md:after:left-2/5 md:after:right-2/4 md:after:bottom-1 md:after:h-0.5 md:after:w-0 md:after:hover:w-2/4 md:after:focus:w-2/4 md:after:duration-500 md:after:translate-x-2/4 md:after:translate-y-2/4 md:after:bg-primary md:shadow-none duration-300"
-                >
-                  <span class="md:hidden inline-block">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-envelope"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
-                      />
-                    </svg>
-                  </span>
-                  <span>Contact Us</span>
-                </a>
-              </li>
-            </ul>
+            <?php
+wp_nav_menu( array(
+  'menu'            => 'Navbar Menu', // The menu to display. Accepts a menu name, slug, ID, or object.
+  'menu_class'      => 'absolute -left-full top-14 bg-gray-900/90 md:bg-inherit duration-300 md:transition-none h-screen w-[70vw] md:h-full md:w-auto md:static flex flex-col md:flex-row items-start md:justify-center md:items-center gap-2 z-100 capitalize pt-5 md:pt-0', // The CSS class for the menu
+  'menu_id'         => 'nav-menu', // The ID attribute for the menu
+  'container'       => 'ul', // The HTML container element for the menu
+  'container_id'    => 'nav-menu', // The ID attribute for the container element
+  'fallback_cb'     => 'wp_page_menu', // The callback function to use if no menu is found
+  'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>', // The HTML template for the menu
+  'depth'           => 0, // The maximum depth of the menu
+  'add_li_class'  => 'w-full px-5 md:px-0 md:w-auto',
+ 'add_a_class' => 'flex md:text-color-base md:dark:text-color-base-dark-alt md:hover:text-color-base-alt dark:md:hover:text-color-base-dark p-2 items-center gap-4 w-full text-inverted hover:text-inverted hover:bg-gradient-to-l from-primary to-primary-alt md:hover:bg-none rounded-md relative md:after:absolute md:after:left-2/5 md:after:right-2/4 md:after:bottom-1 md:after:h-0.5 md:after:w-0 md:after:hover:w-2/4 md:after:focus:w-2/4 md:after:duration-500 md:after:translate-x-2/4 md:after:translate-y-2/4 md:after:bg-primary md:shadow-none duration-300',
+  'echo'            => true // Whether to echo the menu or return it as a string
+) );
+?>
 
  <div class="grid grid-flow-col gap-x-5 items-center">
-
 <div role="button" id="search">
 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
 <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
 </svg>
-<form method="get" action="<?php home_url('/')?>" class="absolute top-14 z-0 left-1/2 w-4/5 -translate-x-1/2 scale-0 origin-center duration-300 inline-flex search-bar">
+<form method="get" action="<?php echo  home_url('/')?>" class="absolute top-14 z-0 left-1/2 w-4/5 max-w-md -translate-x-1/2 scale-0 origin-center duration-300 inline-flex search-bar">
 <input type="text" name="s" placeholder="search blog .." class="block rounded-r-none peer bg-white dark:bg-opacity-100 dark:bg-body-dark ">
 <button class="bg-primary text-inverted p-2 rounded-r-md shadow-md peer-focus:shadow-primary">
 <svg xmlns="http://www.w3.org/2000/svg" 
@@ -310,6 +225,17 @@ width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             </div>
           </div>
         </nav>
+
+
+<?php
+if(is_active_sidebar('header-sidebar')):
+dynamic_sidebar('header-sidebar');
+endif;
+?>
+
+
+
+
         <!-- ============== nav bar end  ============== -->
       </header>
 

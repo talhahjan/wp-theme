@@ -19,7 +19,7 @@
 get_header();
 ?>
 
-<main class="grid grid-cols-1 md:grid-cols-[auto,250px] gap-5 pt-20 px-3">
+<main class="flex flex-grow flex-col md:flex-row gap-2 pt-14 px-3">
  <!-- ======================= main content area starts ===============  -->
  <div class="w-full md:w-auto"> <!-- content wrapper --->		
 <?php
@@ -39,7 +39,8 @@ if(!is_paged()):
               data-heading="New Posts"
               class="before:content-[attr(data-heading)] before:block before:font-medium before:text-sm before:text-color-base-alt text-center text-xl mb-12 font-bold font-Courgette text-primary capitalize"
             >
-              Recent Blogs
+			<?php __('Recent Blogs', 'dashti');?>
+              
             </h2>
 <?php
 endif;
@@ -47,15 +48,30 @@ endif;
 ?>
 
 
-<div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-y-8 gap-x-4 text-center">
+<div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-y-8 gap-x-4">
 <?php
 
 
+$category = get_queried_object();
+$exclude_post_ids = array( $sticky_featured_post_id ?? 0 ); // Add any other post IDs you want to exclude to this array
+$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
+$args = array(
+	'post_type' => 'post',
+	'paged' => $paged,
+	'post__not_in' => $exclude_post_ids,
+);
+
+$query = new WP_Query( $args );
+
+
+
 			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content');
+			while ( $query->have_posts() ) :
+				$query->the_post();
+				get_template_part( 'template-parts/content','new');
 			endwhile;
+			wp_reset_postdata();
 
 ?>
 </div>
@@ -84,9 +100,8 @@ endif;
 
 </div> <!-- end content wrapper --->
 
+<?php get_sidebar();?>
 
-<?php get_sidebar();
-?>
 	</main><!-- #main -->
 
 <?php

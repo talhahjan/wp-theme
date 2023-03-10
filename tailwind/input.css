@@ -44,7 +44,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     --color-text-base: rgb(17, 24, 39);
     --color-text-base-alt: rgb(100, 116, 139);
     --color-text-primary: rgb(var(--fill-primary));
-    --color-text-muted: rgb(255, 228, 230);
+    --color-text-muted: rgb(108, 117, 125);
     --color-text-inverted: rgb(255, 255, 255);
     --fill-primary: 244, 67, 54;
     --fill-primary-alt: 252, 81, 81;
@@ -135,7 +135,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 .skin-teal {
   --color-text-primary: rgb(var(--fill-primary));
-  --color-text-muted: rgb(204, 251, 241);
+  /* --color-text-muted: rgb(204, 251, 241); */
   --color-text-inverted: rgb(255, 255, 255);
   --fill-primary: 20, 184, 166;
   --fill-primary-alt: 33, 197, 179;
@@ -270,4 +270,15 @@ span.page-numbers.current {
    ease-in-out hover:shadow-lg 
    dark:bg-white/20 hover:bg-primary dark:hover:bg-primary hover:text-inverted
      
+}
+
+
+
+
+
+
+
+
+footer .footer-menu a:hover{
+  @apply underline;
 }

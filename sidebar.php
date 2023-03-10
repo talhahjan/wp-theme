@@ -8,24 +8,10 @@
  */
 
 
-
-$categories=get_categories(array('taxonomy'=>'category'));
-
-
-
-// latest post 
-
-$latestPost=array(
-  'posts_per_page' => 5, // Displays the latest 10 posts, change 10 to what you require
-  'post_type' => 'post', // Pulls posts from 'post' post type only
-  'ignore_sticky_posts' => true,); // Ignores the sticky posts
-
-
 ?>
 <aside>
           <div class="sticky top-14 pb-4 flex flex-col gap-6">
             <!--  =========== about card start ============ -->
-
             <div
               class="bg-white dark:bg-opacity-5 rounded-lg shadow-lg p-5 flex justify-center items-center flex-col gap-2 font-Courgette z-0 border border-gray-200 border-indigo-500/20"
             >
@@ -102,86 +88,38 @@ $latestPost=array(
             </div>
 
             <!-- ============= about card end ============= -->
-
-            <!--  =========== category card start ============ -->
-            <div
-              class="block p-6 rounded-lg shadow-lg bg-white dark:bg-opacity-5 relative pt-10  border border-gray-200 border-indigo-500/20"
-            >
-              <h2
-                class="leading-tight text-inverted absolute -top-4 left-4 w-[calc(100%_-_2rem)] flex justify-center items-center h-10 bg-gradient-to-tl from-primary to-primary-alt shadow-md rounded-sm font-semibold capitalize"
-              >
-                category
-              </h2>
-
-              <ul class="ul flex flex-col gap-1">
-
-              <?php
-
-foreach($categories as $category):  
-?>
-  <li class="flex justify-between items-center">
-  <span><a href="<?php echo get_category_link($category->term_id);?>"
-  class="text-color-base-alt hover:text-color-base"
-  ><?php echo $category->name;?></a> </span><span>(<?php echo $category->count;?>)</span>
-</li>
 <?php
-endforeach;
+if(is_active_sidebar('sidebar-top')):
+ dynamic_sidebar( 'sidebar-top');
+endif;
+
+
+$args = array(
+  'before_widget' =>' <div class="block p-6 rounded-lg shadow-lg bg-white dark:bg-opacity-5 relative pt-10  border border-gray-200 border-indigo-500/20">',
+  'after_widget'  => '</div>',
+  'before_title'  => '<h2 class="leading-tight text-inverted absolute -top-4 left-4 w-[calc(100%_-_2rem)] flex justify-center items-center h-10 bg-gradient-to-tl from-primary to-primary-alt shadow-md rounded-sm font-semibold capitalize">',
+  'after_title'   => '</h2>'
+);
+
+the_widget( 'Category_Widget', array('title'=>'Categories'), $args );
+the_widget( 'Recent_Posts_With_Thumbnail_Widget', array('title'=>'Recent Posts'), $args );
+
+
+
+if(is_active_sidebar('sidebar-bottom')):
+  dynamic_sidebar( 'sidebar-bottom');
+  endif;
+  
+
 ?>
 
 
-
-              </ul>
-            </div>
-            <!-- ============= category card end ============= -->
-
-            <!--  =========== category card start ============ -->
-            <div
-              class="block py-4 px-2 rounded-lg shadow-lg bg-white dark:bg-opacity-5 relative pt-10  border border-gray-200 border-indigo-500/20"
-            >
-              <h2
-                class="leading-tight text-inverted absolute -top-4 left-4 w-[calc(100%_-_2rem)] flex justify-center items-center h-10 bg-gradient-to-tl from-primary to-primary-alt shadow-md rounded-sm font-semibold capitalize"
-              >
-                Latest Post
-              </h2>
-
-              <ul class="ul flex flex-col gap-y-4">
-                
-              
-              
-              <?php
-// the query
-$the_query = new WP_Query( $latestPost ); ?>
-
-
-<?php  if ( $the_query->have_posts() ) : ?>
-
-
-	<!-- the loop -->
-	<?php while ($the_query->have_posts()) : $the_query->the_post(); 
-  
-get_template_part( 'template-parts/sidebar','latest');
-
-  ?>
-
-	<?php endwhile; ?>
-  <?php endif; ?>
-
-	<!-- end of the loop -->
-
-
-
-
-	<?php wp_reset_postdata(); ?>
-
-              </ul>
-            </div>
-            <!-- ============= category card end ============= -->
-
-
-
-
-          
-
+     
 
           </div>
         </aside>
+
+
+
+
+

@@ -18,6 +18,8 @@ require get_template_directory() . '/inc/theme-config.php';
 
 
 
+require_once get_template_directory() . '/inc/widgets/Category_Widget.php';
+require_once get_template_directory() . '/inc/widgets/Latest_Posts_Widget.php';
 
 
 /**
@@ -28,13 +30,20 @@ require get_template_directory() . '/inc/theme-config.php';
  * as indicating support for post thumbnails.
  */
 function dashti_theme_setup() {
+
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		* If you're building a theme based on dashti, use a find and replace
 		* to change 'dashti_theme' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'dashti_theme', get_template_directory() . '/languages' );
+	/*
+		* Make theme available for translation.
+		* Translations can be filed in the /languages/ directory.
+		* If you're building a theme based on dashti, use a find and replace
+		* to change 'dashti' to the name of your theme in all the template files.
+		*/
+    load_theme_textdomain( 'dashti', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -61,17 +70,156 @@ function dashti_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 register_nav_menus( 
    array(
-      'serivices-menu'=>'services',
-      'legal-menu'=>'legal',
-      'resources-menu'=>'resources',
-      'social-links'=>'social links',
-      'navbar-menu'=>'Navbar Menu'
+      'navbar-menu'=>'Navbar Menu',
+      'quick-links'=>'Quik Links',
+      'legal-links'=>'Legal',
+      'social-links'=>'Social Links',
       )
    );
 	/*
 		* Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.
 		*/
+
+
+
+    function my_theme_activation_function() {
+     //create navbar menu items 
+      $menu_name = 'Navbar Menu';
+      $menu_exists = wp_get_nav_menu_object( $menu_name );
+  
+      if ( !$menu_exists ) {
+          $menu_id = wp_create_nav_menu( $menu_name );
+  
+          // Set up default menu items
+          wp_update_nav_menu_item( $menu_id, 0, array(
+              'menu-item-title' => 'Home',
+              'menu-item-url' => home_url( '/' ),
+              'menu-item-status' => 'publish'
+          ) );
+  
+          wp_update_nav_menu_item( $menu_id, 0, array(
+              'menu-item-title' => 'Portfolio',
+              'menu-item-url' => home_url( '/portfolio' ),
+              'menu-item-status' => 'publish'
+          ) );
+  
+          wp_update_nav_menu_item( $menu_id, 0, array(
+              'menu-item-title' => 'About Us',
+              'menu-item-url' => home_url( '/about-us' ),
+              'menu-item-status' => 'publish'
+          ) );
+
+          wp_update_nav_menu_item( $menu_id, 0, array(
+            'menu-item-title' => 'Contact Us',
+            'menu-item-url' => home_url( '/contact-us' ),
+            'menu-item-status' => 'publish'
+        ) );
+
+
+          }
+
+//create Quik Links menu items 
+$menu_name = 'Quik Links';
+$menu_exists = wp_get_nav_menu_object( $menu_name );
+
+if ( !$menu_exists ) {
+    $menu_id = wp_create_nav_menu( $menu_name );
+
+    // Set up default menu items
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title' => 'Blogs',
+        'menu-item-url' => home_url( '/' ),
+        'menu-item-status' => 'publish'
+    ) );
+
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title' => 'Portfolio',
+        'menu-item-url' => home_url( '/portfolio' ),
+        'menu-item-status' => 'publish'
+    ) );
+
+    wp_update_nav_menu_item( $menu_id, 0, array(
+      'menu-item-title' => 'Contact Us',
+      'menu-item-url' => home_url( '/contact-us' ),
+      'menu-item-status' => 'publish'
+  ) );
+
+
+    }
+
+//create Legal menu items 
+$menu_name = 'Legal';
+$menu_exists = wp_get_nav_menu_object( $menu_name );
+
+if ( !$menu_exists ) {
+    $menu_id = wp_create_nav_menu( $menu_name );
+
+    // Set up default menu items
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title' => 'Privacy Policy',
+        'menu-item-url' => home_url( '/privacy-policy' ),
+        'menu-item-status' => 'publish'
+    ) );
+
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title' => 'Term Of Use',
+        'menu-item-url' => home_url( '/term-of-use' ),
+        'menu-item-status' => 'publish'
+    ) );
+
+    wp_update_nav_menu_item( $menu_id, 0, array(
+      'menu-item-title' => 'Disclaimer',
+      'menu-item-url' => home_url( '/disclaimer' ),
+      'menu-item-status' => 'publish'
+  ) );
+
+
+
+    }
+
+//create Social Links items 
+$menu_name = 'Social Links';
+$menu_exists = wp_get_nav_menu_object( $menu_name );
+
+if ( !$menu_exists ) {
+    $menu_id = wp_create_nav_menu( $menu_name );
+
+    // Set up default menu items
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title' => 'Facebook',
+        'menu-item-url' => 'http://facebook.com/talhah.jan',
+        'menu-item-status' => 'publish'
+    ) );
+
+    wp_update_nav_menu_item( $menu_id, 0, array(
+        'menu-item-title' => 'Twitter',
+        'menu-item-url' => 'https://twitter.com/mKhalidDashti',
+        'menu-item-status' => 'publish'
+    ) );
+
+    wp_update_nav_menu_item( $menu_id, 0, array(
+      'menu-item-title' => 'LinkedIn',
+      'menu-item-url' => 'https://www.linkedin.com/in/khalid-dashti/',
+      'menu-item-status' => 'publish'
+  ) );
+
+
+
+
+
+    }
+    
+  }
+
+  add_action( 'after_switch_theme', 'my_theme_activation_function' );
+  
+
+
+
+
+
+
 	add_theme_support(
 		'html5',
 		array(
@@ -85,22 +233,6 @@ register_nav_menus(
 		)
 	);
 
-	// Set up the WordPress core custom background feature.
-
-	// add_theme_support(
-	// 	'custom-background',
-	// 	apply_filters(
-	// 		'dashti_theme_custom_background_args',
-	// 		array(
-	// 			'default-color' => 'ffffff',
-	// 			'default-image' => '',
-	// 		)
-	// 	)
-	// );
-
-	// Add theme support for selective refresh for widgets.
-
-	// add_theme_support( 'customize-selective-refresh-widgets' );
 
 	/**
 	 * Add support for core custom logo.
@@ -108,15 +240,6 @@ register_nav_menus(
 	 * @link https://codex.wordpress.org/Theme_Logo
 	 */
 
-	//  add_theme_support(
-	// 	'custom-logo',
-	// 	array(
-	// 		'height'      => 250,
-	// 		'width'       => 250,
-	// 		'flex-width'  => true,
-	// 		'flex-height' => true,
-	// 	)
-	// );
 }
 
 add_action( 'after_setup_theme', 'dashti_theme_setup' );
@@ -129,31 +252,61 @@ add_action( 'after_setup_theme', 'dashti_theme_setup' );
  * @global int $content_width
  */
 
-//  function dashti_theme_content_width() {
-// 	$GLOBALS['content_width'] = apply_filters( 'dashti_theme_content_width', 640 );
-// }
-// add_action( 'after_setup_theme', 'dashti_theme_content_width', 0 );
-
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 
-// function dashti_theme_widgets_init() {
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__( 'Sidebar', 'dashti_theme' ),
-// 			'id'            => 'sidebar-1',
-// 			'description'   => esc_html__( 'Add widgets here.', 'dashti_theme' ),
-// 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</section>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-// }
-// add_action( 'widgets_init', 'dashti_theme_widgets_init' );
+
+
+
+
+
+
+
+
+function dashti_theme_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar top', 'dashti' ),
+			'id'            => 'sidebar-top',
+			'description'   => __( 'Top area of right sidebar , Add widgets here.', 'dashti' ),
+     'before_widget' =>' <div class="block p-6 rounded-lg shadow-lg bg-white dark:bg-opacity-5 relative pt-10  border border-gray-200 border-indigo-500/20">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="leading-tight text-inverted absolute -top-4 left-4 w-[calc(100%_-_2rem)] flex justify-center items-center h-10 bg-gradient-to-tl from-primary to-primary-alt shadow-md rounded-sm font-semibold capitalize">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar bottom', 'dashti' ),
+			'id'            => 'sidebar-bottom',
+	  	'description'   => __( 'Bottom area of right sidebar, Add widgets here.', 'dashti' ),
+     'before_widget' =>'<div class="block py-4 px-2 rounded-lg shadow-lg bg-white dark:bg-opacity-5 relative pt-10  border border-gray-200 border-indigo-500/20">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="leading-tight text-inverted absolute -top-4 left-4 w-[calc(100%_-_2rem)] flex justify-center items-center h-10 bg-gradient-to-tl from-primary to-primary-alt shadow-md rounded-sm font-semibold capitalize">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+}
+add_action( 'widgets_init', 'dashti_theme_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -200,26 +353,7 @@ add_action( 'wp_enqueue_scripts', 'dashti_theme_scripts');
  require get_template_directory() . '/inc/template-tags.php';
 
 
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-//  require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-// require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-// if ( defined( 'JETPACK__VERSION' ) ) {
-// 	require get_template_directory() . '/inc/jetpack.php';
-// }
-
-
-/*
- 
+/* 
 instead of mentioning date and time of the post, we want display
   
 how long ago was post the was published (i.e 1 hours ago , 1 week ago etc ) 
@@ -230,7 +364,7 @@ the same thing we will apply bellow  for the comment/reply
 
 
 function dashti_theme_post_time_ago() {
-  return sprintf( esc_html__( '%s ago', 'textdomain' ), human_time_diff(get_the_time ( 'U' ), current_time( 'timestamp' ) ) );
+  return sprintf( esc_html__( '%s ago', 'dashti' ), human_time_diff(get_the_time ( 'U' ), current_time( 'timestamp' ) ) );
   }
   add_filter( 'the_time', 'dashti_theme_post_time_ago' );
 
@@ -247,7 +381,7 @@ the same thing was just applied above for the post
 
 
   function dashti_theme_comment_time_ago() {
-    return sprintf( esc_html__( '%s ago', 'textdomain' ), human_time_diff(get_comment_time ( 'U' ), current_time( 'timestamp' ) ) );
+    return sprintf( esc_html__( '%s ago', 'dashti' ), human_time_diff(get_comment_time ( 'U' ), current_time( 'timestamp' ) ) );
     }
     add_filter( 'get_comment_date', 'dashti_theme_comment_time_ago' );
 
@@ -257,27 +391,36 @@ the same thing was just applied above for the post
 
 
 
-function dashti_theme_add_additional_class_on_li($classes, $item, $args) {
-	if(isset($args->add_li_class)) {
-		$classes[] = $args->add_li_class;
-	}
-	return $classes;
+
+
+
+
+
+function dashti_theme_add_additional_class_on_li( $classes, $item, $args ) {
+  // Remove any existing classes from the $classes array
+  $classes = array();
+
+  // Add your own custom class to the $classes array
+  if ( isset( $args->add_li_class ) ) {
+      $classes[] = $args->add_li_class;
+  }
+
+  return $classes;
 }
- add_filter('nav_menu_css_class', 'dashti_theme_add_additional_class_on_li', 1, 3);
+add_filter( 'nav_menu_css_class', 'dashti_theme_add_additional_class_on_li', 10, 3 );
 
 
- // add li and a tag classes to navbar menu
- function dashti_theme_add_additional_class_on_a($classes, $item, $args)
+function dashti_theme_add_additional_class_on_a($atts, $item, $args)
 {
     if (isset($args->add_a_class)) {
-        $classes['class'] = $args->add_a_class;
+        $class = empty($atts['class']) ? '' : $atts['class'];
+        $class .= ' ' . $args->add_a_class;
+        $atts['class'] = trim($class);
     }
-    return $classes;
+    return $atts;
 }
 
-
-
-add_filter('nav_menu_link_attributes', 'dashti_theme_add_additional_class_on_a', 1, 3);
+add_filter('nav_menu_link_attributes', 'dashti_theme_add_additional_class_on_a', 10, 3);
 
 
 
@@ -321,9 +464,9 @@ function dashti_theme_comment($comment, $args, $depth) {
     $commenter     = wp_get_current_commenter();
     $show_pending_links = isset( $commenter['comment_author'] ) && $commenter['comment_author'];
     if ( $commenter['comment_author_email'] ) {
-        $moderation_note = __( 'Your comment is awaiting moderation.' );
+        $moderation_note = __( 'Your comment is awaiting moderation.' ,'dashti');
     } else {
-        $moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.' );
+        $moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.' ,'dashti');
     }
     ?>
 
@@ -409,7 +552,7 @@ if($args['has_children']):
   <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
 </svg>
                   </button>
-                  <span>Show/Hide Replies</span>
+                  <span><?php __('Show/Hide Replies','dashti')?></span>
                 </span>
                 <?php
                 endif;
@@ -507,7 +650,7 @@ function dashti_theme_custom_form_fields( $fields )
         '<div class="comment-form-author col-span-full">%s %s</div>' ,
         sprintf(
         '<label for="comment">%s%s</label>',
-        __( 'Comment' ),
+        __( 'Comment' ,'dashti'),
         ( $req ? $required_indicator : '' )
         ),
         sprintf(
@@ -519,7 +662,7 @@ function dashti_theme_custom_form_fields( $fields )
        '<div class="comment-form-author col-span-full md:col-span-1">%s %s</div>',
        sprintf(
        '<label for="author">%s%s</label>',
-       __( 'Name' ),
+       __( 'Name','dashti' ),
        ( $req ? $required_indicator : '' )
        ),
        sprintf(
@@ -533,7 +676,7 @@ function dashti_theme_custom_form_fields( $fields )
        '<div class="comment-form-email col-span-full md:col-span-1">%s %s</div>',
        sprintf(
        '<label for="email">%s%s</label>',
-       __( 'Email' ),
+       __( 'Email', 'dashti'),
        ( $req ? $required_indicator : '' )
        ),
        sprintf(
@@ -543,7 +686,6 @@ function dashti_theme_custom_form_fields( $fields )
        ( $req ? $required_attribute : '' )
        )
        ),
-    // 'author'=>'<!-- email field -->',
     'cookies'=> sprintf(
       '<div class="comment-form-cookies-consent col-span-full flex justify-start items-center">%s %s</div>',
       sprintf(
@@ -554,7 +696,7 @@ function dashti_theme_custom_form_fields( $fields )
         '
         <label for="wp-comment-cookies-consent" class="ml-2 block text-sm">%s</label>
         ',
-        __( 'Save my details for next time i comment !' )
+        __( 'Save my details for next time i comment !','dashti' )
       )
       ),
     
@@ -633,9 +775,9 @@ function dashti_theme_the_posts_pagination($args = [], $class = 'pagination'){
        'mid_size'                   => PAGINATION_MID_SIZE,
        'end_size'                   => PAGINATION_END_SIZE,
       'prev_next'                  => false,
-      'prev_text'                  => __(PAGINATION_PREV_TEXT, 'textdomain'),
-      'next_text'                  => __(PAGINATION_NEXT_TEXT, 'textdomain'),
-      'screen_reader_text' => __(PAGINATION_SCREEN_READER_TEXT, 'textdomain'),
+      'prev_text'                  => __('Next', 'dashti'),
+      'next_text'                  => __('Previous', 'dashti'),
+      'screen_reader_text' => __('pagination Screen Text', 'dashti'),
 ];
 
     $links   = paginate_links($args);
@@ -716,5 +858,8 @@ add_filter( 'language_attributes', 'add_dark_class_to_html_tag' );
   add_action( 'wp_ajax_save_theme_session', 'save_theme_session' );
   add_action( 'wp_ajax_nopriv_save_theme_session', 'save_theme_session' );
   
-
-
+  
+  
+function save_featured_sticky_post_id($post_id=null){
+$GLOBALS['sticky_featured_post_id']=$post_id;
+}
