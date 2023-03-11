@@ -5581,6 +5581,30 @@ textarea.form-control.is-invalid{
   --tw-aspect-h: var(--height);
 }
 
+.aspect-w-16{
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+  --tw-aspect-w: 16;
+}
+
+.aspect-w-16 > *{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.aspect-h-9{
+  --tw-aspect-h: 9;
+}
+
+.aspect-h-1{
+  --tw-aspect-h: 1;
+}
+
 .aspect-none{
   position: static;
   padding-bottom: 0;
@@ -6684,6 +6708,10 @@ textarea.form-control.is-invalid{
 
 .h-\[calc\(100\%-theme\(\"spacing\.1\"\)\)\]{
   height: calc(100% - 0.25rem);
+}
+
+.max-h-\[200px\]{
+  max-height: 200px;
 }
 
 .w-full{
@@ -7881,6 +7909,11 @@ textarea.form-control.is-invalid{
 .bg-\[rgb\(255\2c 0\2c 0\)\]{
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-red-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-l{
@@ -10364,6 +10397,26 @@ footer .footer-menu a:hover{
     --tw-aspect-h: 1;
   }
 
+  .sm\:aspect-w-3{
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 3;
+  }
+
+  .sm\:aspect-w-3 > *{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .sm\:aspect-h-2{
+    --tw-aspect-h: 2;
+  }
+
   .sm\:prose{
     color: var(--tw-prose-body);
     max-width: 65ch;
@@ -10963,6 +11016,42 @@ footer .footer-menu a:hover{
     --tw-aspect-h: 1;
   }
 
+  .md\:aspect-w-4{
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 4;
+  }
+
+  .md\:aspect-w-4 > *{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .md\:aspect-h-3{
+    --tw-aspect-h: 3;
+  }
+
+  .md\:aspect-w-2{
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 2;
+  }
+
+  .md\:aspect-w-2 > *{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
   .md\:after\:absolute::after{
     content: var(--tw-content);
     position: absolute;
@@ -11039,6 +11128,26 @@ footer .footer-menu a:hover{
   .lg\:my-4{
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .lg\:aspect-w-16{
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 16;
+  }
+
+  .lg\:aspect-w-16 > *{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .lg\:aspect-h-9{
+    --tw-aspect-h: 9;
   }
 
   .lg\:prose-lg{
@@ -11257,6 +11366,12 @@ footer .footer-menu a:hover{
 
   .dark .dark\:lg\:hover\:\[paint-order\:markers\]:hover{
     paint-order: markers;
+  }
+}
+
+@media (min-width: 1280px){
+  .xl\:aspect-h-9{
+    --tw-aspect-h: 9;
   }
 }
 

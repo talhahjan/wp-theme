@@ -44,13 +44,10 @@ $the_query = new WP_Query( $args );
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white dark:bg-opacity-5 rounded-lg shadow-lg p-6 mb-10 border border-indigo-500/20">
 
 
-  <div class="aspect-w-3 aspect-h-2 sm:aspect-w-2 sm:aspect-h-1 md:aspect-w-1 md:aspect-h-1">
 
 <div
-class="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg bg-primary "
+class="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg bg-primary h-72 w-full"
 >
-
-
 
 <img
       src="<?php echo get_the_post_thumbnail_url();?>"
@@ -71,7 +68,6 @@ the_tag_list(array(
 
 </div>
 
-</div>
 
 
 
