@@ -12,7 +12,7 @@
 
 
                   <img
-                        src="<?php echo get_the_post_thumbnail_url();?>"
+                        src="<?php dashti_theme_post_thumbnail_url();?>"
                         class="w-full h-full bg-primary"
                         alt=""
                       >
@@ -65,7 +65,14 @@ the_tag_list(array(
     </div>
 <h2 class="text-lg font-bold dark:text-color-base-alt my-2 hover:underline duration-150 leading-7"> 
   <a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-    <p><?php dashti_theme_the_excerpt();?></p>
+
+  <?php if(!is_category()):?>
+<span class="text-sm text-primary my-2"><?php echo get_the_category()[0]->cat_name;?></span>
+<?php endif;?>
+
+
+
+    <p class="mt-2"><?php dashti_theme_the_excerpt();?></p>
 </div>
             </div>
             

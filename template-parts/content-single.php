@@ -1,11 +1,11 @@
 
-<h1><?php the_title();?></h1>
+<h1 class="font-semibold text-2xl leading-loose"><?php the_title();?></h1>
 
 <div class="my-4 inline-block">
 
 
 
-<div class="inline-flex space-x-2 items-center p-2">
+<div class="inline-flex space-x-2 items-center mx-2">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-history" viewBox="0 0 16 16">
   <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
   <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
@@ -13,11 +13,20 @@
 </svg><span><?php the_time();?></span></div>
 
 
-<div class="inline-flex space-x-2 items-center p-2">
+<div class="inline-flex space-x-2 items-center mx-2">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
 </svg>
 <span><?php echo get_author_name($post->post_author);?></span>
+</div>
+
+
+<div class="inline-flex space-x-2 items-center mx-2">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat" viewBox="0 0 16 16">
+  <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/>
+</svg>
+
+<span><?php echo get_comments_number();?></span>
 </div>
 
 
@@ -27,8 +36,8 @@
 
 
 
-<div class="inline-flex items-center p-2">
-<button class="flex items-center p-2 duration-300 text-sm 
+<div class="inline-flex items-center mx-2">
+<button class="flex items-center mx-2 duration-300 text-sm 
 font-normal 
 whitespace-nowrap 
 rounded-full hover:bg-slate-800/20 
@@ -37,8 +46,8 @@ dark:hover:bg-gray-500/50">
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
                           fill="currentColor"
-                          height="20"
-                          width="20"
+                          height="16"
+                          width="16"
                          
                         >
 
@@ -50,7 +59,7 @@ dark:hover:bg-gray-500/50">
 
 
 
-<button class="flex items-center p-2 duration-300 text-sm 
+<button class="flex items-center mx-2 duration-300 text-sm 
 font-normal 
 whitespace-nowrap 
 rounded-full hover:bg-slate-800/20 
@@ -59,15 +68,15 @@ dark:hover:bg-gray-500/50">
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
                           fill="currentColor"
-                          height="20"
-                          width="20"
+                          height="16"
+                          width="16"
                          
                         >
 
                         <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path>                        </svg>
 </button>
 
-<button class="flex items-center p-2 duration-300 text-sm 
+<button class="flex items-center mx-2 duration-300 text-sm 
 font-normal 
 whitespace-nowrap 
 rounded-full hover:bg-slate-800/20 
@@ -76,8 +85,8 @@ dark:hover:bg-gray-500/50">
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
                           fill="currentColor"
-                          height="20"
-                          width="20"
+                          height="16"
+                          width="15"
                          
                         >
 
@@ -100,7 +109,7 @@ prose-img:shadow-md prose-headings:text-color-base-alt text-color-base dark:text
 
 
 <div>
-<img src="<?php echo get_the_post_thumbnail_url();?>"  class="rounded-md w-full" alt="">
+<img src="<?php dashti_theme_post_thumbnail_url();?>"  class="rounded-md w-full" alt="">
 </div>
 
 <?php the_content();?>

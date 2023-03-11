@@ -172,7 +172,15 @@ endif;
 		
 
 
+function dashti_theme_post_thumbnail_url(){
+$thumbnail_url=get_template_directory_uri().'/assets/images/no-thumb.jpg';
 
+if(has_post_thumbnail()){
+$thumbnail_url=get_the_post_thumbnail_url();
+}
+
+echo $thumbnail_url;
+}
 
 
 
