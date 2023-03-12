@@ -53,7 +53,7 @@
           >
             <div class="toggle md:hidden" id="toggler">
               <button
-                class="dark:text-color-base-dark-alt hover:text-color-base-alt dark:hover:text-color-base-dark duration-300"
+                class="text-color-base-alt hover:text-color-base duration-300"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@
               </button>
             </div>
             <div
-              class="brand font-semibold select-none dark:text-color-base-dark-alt"
+              class="brand font-semibold select-none text-color-base-alt  "
             >
               Code360
             </div>
@@ -83,17 +83,18 @@ wp_nav_menu( array(
   'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>', // The HTML template for the menu
   'depth'           => 0, // The maximum depth of the menu
   'add_li_class'  => 'w-full px-5 md:px-0 md:w-auto',
- 'add_a_class' => 'flex md:text-color-base md:dark:text-color-base-dark-alt md:hover:text-color-base-alt dark:md:hover:text-color-base-dark p-2 items-center gap-4 w-full text-inverted hover:text-inverted hover:bg-gradient-to-l from-primary to-primary-alt md:hover:bg-none rounded-md relative md:after:absolute md:after:left-2/5 md:after:right-2/4 md:after:bottom-1 md:after:h-0.5 md:after:w-0 md:after:hover:w-2/4 md:after:focus:w-2/4 md:after:duration-500 md:after:translate-x-2/4 md:after:translate-y-2/4 md:after:bg-primary md:shadow-none duration-300',
+  'add_a_class' => 'flex md:text-color-base-alt md:hover:text-color-base p-2 items-center gap-4 w-full text-inverted hover:text-inverted hover:bg-gradient-to-l from-primary to-primary-alt md:hover:bg-none rounded-md relative md:after:absolute md:after:left-2/5 md:after:right-2/4 md:after:bottom-1 md:after:h-0.5 md:after:w-0 md:after:hover:w-2/4 md:after:focus:w-2/4 md:after:duration-500 md:after:translate-x-2/4 md:after:translate-y-2/4 md:after:bg-primary md:shadow-none duration-300',
   'echo'            => true // Whether to echo the menu or return it as a string
 ) );
 ?>
 
- <div class="grid grid-flow-col gap-x-5 items-center">
+<div class="grid grid-flow-col gap-x-5 items-center">
+
 <div role="button" id="search">
 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
 <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z" />
 </svg>
-<form method="get" action="<?php echo  home_url('/')?>" class="absolute top-14 z-0 left-1/2 w-4/5 max-w-md -translate-x-1/2 scale-0 origin-center duration-300 inline-flex search-bar">
+<form method="get" action="<?php home_url('/')?>" class="absolute top-14 z-0 left-1/2 w-4/5 -translate-x-1/2 scale-0 origin-center duration-300 inline-flex search-bar">
 <input type="text" name="s" placeholder="search blog .." class="block rounded-r-none peer bg-white dark:bg-opacity-100 dark:bg-body-dark ">
 <button class="bg-primary text-inverted p-2 rounded-r-md shadow-md peer-focus:shadow-primary">
 <svg xmlns="http://www.w3.org/2000/svg" 
@@ -103,7 +104,6 @@ width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
 </button>
 </form>
 </div>
-
 
               <div class="relative w-5 h-full dropdown">
                 <button

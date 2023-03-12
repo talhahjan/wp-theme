@@ -454,11 +454,9 @@ video {
    dark mode variables should not be over-writen by any theme
    although these following variables can be over-written in theme ,in order to create 
    theme define css class staring with theme- (i,e theme-aqua, theme-indigo)
-   themes are automatically will be populated in theme menu dropdown,
-   by using javascript's  querySelector
    */
-  --color-text-base: rgb(17, 24, 39);
-  --color-text-base-alt: rgb(100, 116, 139);
+  --color-text-base: rgb(100, 116, 139);
+  --color-text-base-alt: rgb(17, 24, 39);
   --color-text-primary: rgb(var(--fill-primary));
   --color-text-muted: rgb(108, 117, 125);
   --color-text-inverted: rgb(255, 255, 255);
@@ -5489,97 +5487,6 @@ textarea.form-control.is-invalid{
   }
 }
 
-.aspect-w-1{
-  position: relative;
-  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
-  --tw-aspect-w: 1;
-}
-
-.aspect-w-1 > *{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.aspect-w-2{
-  position: relative;
-  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
-  --tw-aspect-w: 2;
-}
-
-.aspect-w-2 > *{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.aspect-h-2{
-  --tw-aspect-h: 2;
-}
-
-.aspect-w-\[123\]{
-  position: relative;
-  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
-  --tw-aspect-w: 123;
-}
-
-.aspect-w-\[123\] > *{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.aspect-w-\[var\(--width\)\]{
-  position: relative;
-  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
-  --tw-aspect-w: var(--width);
-}
-
-.aspect-w-\[var\(--width\)\] > *{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.aspect-h-\[123\]{
-  --tw-aspect-h: 123;
-}
-
-.aspect-h-\[var\(--height\)\]{
-  --tw-aspect-h: var(--height);
-}
-
-.aspect-none{
-  position: static;
-  padding-bottom: 0;
-}
-
-.aspect-none > *{
-  position: static;
-  height: auto;
-  width: auto;
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
-}
-
 .prose{
   color: var(--tw-prose-body);
   max-width: 65ch;
@@ -6475,8 +6382,8 @@ textarea.form-control.is-invalid{
   margin-bottom: 3rem;
 }
 
-.mb-5{
-  margin-bottom: 1.25rem;
+.mb-10{
+  margin-bottom: 2.5rem;
 }
 
 .mr-2{
@@ -6501,10 +6408,6 @@ textarea.form-control.is-invalid{
 
 .mt-4{
   margin-top: 1rem;
-}
-
-.mb-10{
-  margin-bottom: 2.5rem;
 }
 
 .-mt-4{
@@ -6679,6 +6582,10 @@ textarea.form-control.is-invalid{
   height: calc(100% - 0.25rem);
 }
 
+.min-h-screen{
+  min-height: 100vh;
+}
+
 .w-full{
   width: 100%;
 }
@@ -6727,20 +6634,32 @@ textarea.form-control.is-invalid{
   width: 6rem;
 }
 
-.max-w-5xl{
-  max-width: 64rem;
+.min-w-\[600px\]{
+  min-width: 600px;
 }
 
-.max-w-md{
-  max-width: 28rem;
+.min-w-\[300px\]{
+  min-width: 300px;
+}
+
+.max-w-5xl{
+  max-width: 64rem;
 }
 
 .max-w-xl{
   max-width: 36rem;
 }
 
+.max-w-md{
+  max-width: 28rem;
+}
+
 .max-w-4xl{
   max-width: 56rem;
+}
+
+.max-w-\[600px\]{
+  max-width: 600px;
 }
 
 .flex-shrink{
@@ -6786,6 +6705,21 @@ textarea.form-control.is-invalid{
 
 .-translate-y-2{
   --tw-translate-y: -0.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-1\/2{
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-1\/2{
+  --tw-translate-y: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-1\/2{
+  --tw-translate-x: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -8384,11 +8318,6 @@ textarea.form-control.is-invalid{
   line-height: 1.75rem;
 }
 
-.text-gray-400{
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
 .text-color-base-alt{
   color: var(--color-text-base-alt);
 }
@@ -9244,16 +9173,16 @@ footer .footer-menu a:hover{
   font-weight: 700;
 }
 
-.hover\:text-color-base-alt:hover{
-  color: var(--color-text-base-alt);
-}
-
 .hover\:text-color-base:hover{
   color: var(--color-text-base);
 }
 
 .hover\:text-inverted:hover{
   color: var(--color-text-inverted);
+}
+
+.hover\:text-color-base-alt:hover{
+  color: var(--color-text-base-alt);
 }
 
 .hover\:underline:hover{
@@ -9786,10 +9715,6 @@ footer .footer-menu a:hover{
 
 .dark .dark\:bg-opacity-100{
   --tw-bg-opacity: 1;
-}
-
-.dark .dark\:text-color-base-alt{
-  color: var(--color-text-base-alt);
 }
 
 .dark .dark\:text-color-base{
@@ -10833,6 +10758,27 @@ footer .footer-menu a:hover{
     width: 4rem;
   }
 
+  .md\:w-full{
+    width: 100%;
+  }
+
+  .md\:w-4\/5{
+    width: 80%;
+  }
+
+  .md\:min-w-max{
+    min-width: -moz-max-content;
+    min-width: max-content;
+  }
+
+  .md\:min-w-\[600px\]{
+    min-width: 600px;
+  }
+
+  .md\:min-w-full{
+    min-width: 100%;
+  }
+
   .md\:max-w-4xl{
     max-width: 56rem;
   }
@@ -10894,8 +10840,8 @@ footer .footer-menu a:hover{
     line-height: 1rem;
   }
 
-  .md\:text-color-base{
-    color: var(--color-text-base);
+  .md\:text-color-base-alt{
+    color: var(--color-text-base-alt);
   }
 
   .md\:shadow-none{
@@ -10965,8 +10911,8 @@ footer .footer-menu a:hover{
     background-image: none;
   }
 
-  .md\:hover\:text-color-base-alt:hover{
-    color: var(--color-text-base-alt);
+  .md\:hover\:text-color-base:hover{
+    color: var(--color-text-base);
   }
 
   .md\:after\:hover\:w-2\/4:hover::after{

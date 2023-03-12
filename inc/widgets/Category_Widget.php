@@ -30,8 +30,9 @@ class Category_Widget extends WP_Widget   {
 
         echo ' <li class="flex justify-between items-center">
          <span><a href="' . get_category_link( $category->term_id ) . '"
-         class="text-color-base-alt hover:text-color-base"
-         >' . $category->name . ' </a> </span><span>(' . $count . ')</span>
+         class="text-color-base-alt hover:text-color-base hover:underline"
+         >' . $category->name . ' </a> </span>
+         <span>(' . $count . ')</span>
        </li>';
 
 

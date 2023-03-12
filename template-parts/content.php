@@ -27,13 +27,11 @@ the_tag_list(array(
 ?> 
    
 </div>
+  </div>
+  </div>
 
-                  </div>
-
-                </div>
-
-       <div class="my-2 mx-4">
-    <div class="inline-flex space-x-4 text-xs items-center dark:text-color-base-alt">
+    <div class="my-2 mx-4 text-color-base-alt">
+    <div class="inline-flex space-x-4 text-xs items-center">
     <div class="inline-flex items-center space-x-2">
 <img src="<?php echo get_avatar_url(get_the_author_ID());?>" alt="" class="h-5 w-5 rounded-full shadow-md">
 <h5 class="font-semibold"><?php the_author();?></h5>
@@ -63,7 +61,7 @@ the_tag_list(array(
 
 
     </div>
-<h2 class="text-lg font-bold dark:text-color-base-alt my-2 hover:underline duration-150 leading-7"> 
+<h2 class="text-lg font-bold text-color-base-alt hover:text-color-base my-2 hover:underline duration-150 leading-7"> 
   <a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 
   <?php if(!is_category()):?>

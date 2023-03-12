@@ -41,7 +41,7 @@ public function widget( $args, $instance ) {
     
     
             <div class="grow flex flex-col justify-between w-full">
-             <a href="'.get_the_permalink().'" class="block"> '.get_the_title().'</a>
+             <a href="'.get_the_permalink().'" class="block text-color-base-alt hover:text-color-base hover:underline"> '.get_the_title().'</a>
               <small class="text-sm md:text-xs">'.get_the_date().'</small>
             </div>
           </li>';

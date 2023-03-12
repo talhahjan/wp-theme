@@ -38,11 +38,9 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
    dark mode variables should not be over-writen by any theme
    although these following variables can be over-written in theme ,in order to create 
    theme define css class staring with theme- (i,e theme-aqua, theme-indigo)
-   themes are automatically will be populated in theme menu dropdown,
-   by using javascript's  querySelector
    */
-    --color-text-base: rgb(17, 24, 39);
-    --color-text-base-alt: rgb(100, 116, 139);
+    --color-text-base: rgb(100, 116, 139);
+    --color-text-base-alt: rgb(17, 24, 39);
     --color-text-primary: rgb(var(--fill-primary));
     --color-text-muted: rgb(108, 117, 125);
     --color-text-inverted: rgb(255, 255, 255);
@@ -271,7 +269,6 @@ span.page-numbers.current {
    dark:bg-white/20 hover:bg-primary dark:hover:bg-primary hover:text-inverted
      
 }
-
 
 
 

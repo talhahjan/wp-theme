@@ -107,10 +107,11 @@ prose-img:shadow-md prose-headings:text-color-base-alt text-color-base dark:text
 
 <?php the_excerpt();?>
 
-
+<?php if(has_post_thumbnail()):?>
 <div>
 <img src="<?php dashti_theme_post_thumbnail_url();?>"  class="rounded-md w-full" alt="">
 </div>
+<?php endif;?>
 
 <?php the_content();?>
 

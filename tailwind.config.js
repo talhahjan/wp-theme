@@ -58,7 +58,7 @@ module.exports = {
   },
   plugins: [
     require("tw-elements/dist/plugin"),
-    require("@tailwindcss/aspect-ratio"),
+    // require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/typography"),
     // require("@tailwindcss/line-clamp"),
     // require("@tailwindcss/forms")({

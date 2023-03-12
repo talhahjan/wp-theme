@@ -82,7 +82,7 @@ the_tag_list(array(
 
 <div class="flex flex-col">
 
-<h2 class="text-lg font-bold dark:text-color-base-alt hover:underline duration-150 leading-7"> 
+<h2 class="text-lg font-bold text-color-base-alt hover:text-color-base hover:underline duration-150 leading-7"> 
 <a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 
 <?php if(!is_category()):?>
@@ -91,12 +91,12 @@ the_tag_list(array(
 
 
 
- <div class="-order-1 md:order-none inline-flex space-x-4 text-xs items-center dark:text-color-base-alt my-4">
+ <div class="-order-1 md:order-none inline-flex space-x-4 text-xs items-center text-color-base-alt my-4">
     <div class="inline-flex items-center space-x-2">
     <img src="<?php echo get_avatar_url(get_the_author_ID());?>" alt="" class="h-4 w-4 rounded-full shadow-md"> <h5 class="font-semibold"><?php the_author();?></h5>
 </div>
 
-     <div class="inline-flex space-x-2">
+     <div class="inline-flex space-x-2 text-color-base-alt">
      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-history" viewBox="0 0 16 16">
   <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
   <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
@@ -125,7 +125,7 @@ the_tag_list(array(
 
     </div>
 
-    <p class=""><?php dashti_theme_the_excerpt(500);?></p>
+    <p><?php dashti_theme_the_excerpt(500);?></p>
 </div>
 
 
